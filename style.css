@@ -550,9 +550,11 @@ footer {
 .whatsapp-float:hover {
     transform: scale(1.08);
 }
-
-.whatsapp-float span {
-    line-height: 1;
+.whatsapp-float svg 
+{
+    width: 32px;
+    height: 32px;
+    fill: white;
 }
 
 @media (max-width: 600px) {
