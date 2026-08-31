@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVA Craft — Автомобильные коврики премиум-класса в Лодзи</title>
+    <meta name="description" content="Индивидуальный пошив EVA ковриков и аксессуаров в Лодзи (Польша). Идеальная посадка, защита от грязи. Закажите с доставкой!">
+    <meta name="keywords" content="eva коврики, автоковрики лодзь, dywaniki eva łódź, коврики в авто польша, eva craft">
+
+    <!-- Open Graph for Social Media & Ads -->
+    <meta property="og:title" content="EVA Craft — EVA коврики в Польше">
+    <meta property="og:description" content="Индивидуальный пошив за 1-2 дня. Доставка по всей Польше.">
+    <meta property="og:type" content="website">
+
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #15181e;
+            --accent-red: #e52e2e;
+            --accent-hover: #ff3b3b;
+            --text-main: #ffffff;
+            --text-muted: #a0a5b1;
+            --border-color: #232730;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(11, 12, 16, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--accent-red); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-red); }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            background-color: var(--accent-red);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover { background-color: var(--accent-hover); }
+
+        /* Hero Section */
+        .hero {
+            padding: 90px 5% 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1b2029 0%, var(--bg-color) 75%);
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 17px;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        /* Material Section */
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-red);
+            margin: 10px auto 0;
+        }
+
+        .material-section {
+            padding: 60px 5%;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .material-card {
+            background: var(--bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .material-card h3 {
+            color: var(--accent-red);
+            margin-bottom: 10px;
+        }
+
+        /* Gallery Section (2x2 Grid with Bigger Photos) */
+        .gallery-section { padding: 60px 5%; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.04); }
+
+        /* Order Form Section */
+        .order-section {
+            padding: 60px 5%;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .form-box {
+            max-width: 550px;
+            margin: 0 auto;
+            background: var(--bg-color);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group { margin-bottom: 18px; }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            background-color: #12151b;
+            color: #fff;
+            outline: none;
+        }
+
+        select:focus, input:focus { border-color: var(--accent-red); }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--accent-red);
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background-color: var(--accent-hover); }
+
+        /* Floating Contact Buttons (Right Side) */
+        .floating-buttons {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+            transition: transform 0.3s;
+        }
+
+        .float-btn:hover { transform: scale(1.1); }
+        .float-phone { background-color: #25d366; }
+        .float-phone svg { width: 26px; height: 26px; fill: #fff; }
+
+        .float-insta { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+        .float-insta svg { width: 26px; height: 26px; fill: #fff; }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            padding: 40px 5% 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto 30px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 8px; }
+
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-col a:hover { color: var(--accent-red); }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            nav { display: none; }
+            .hero h1 { font-size: 28px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="logo">EVA <span>CRAFT</span></a>
+        <nav>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#material">Материал EVA</a></li>
+                <li><a href="#works">Наши работы</a></li>
+                <li><a href="#order">Рассчитать стоимость</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="tel:+48600757108" class="contact-btn">+48 600 757 108</a>
+        </div>
+    </header>
+
+    <!-- Floating Contact Buttons (Right Side) -->
+    <div class="floating-buttons">
+        <a href="tel:+48600757108" class="float-btn float-phone" title="Позвонить">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/eva_craft_kd14" target="_blank" class="float-btn float-insta" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <h1>Индивидуальный пошив EVA ковриков в Лодзи</h1>
+        <p>Идеально повторяют форму салона вашего авто. Максимальная защита от грязи, воды и снега. Изготовление за 1-2 дня.</p>
+        <a href="#order" class="contact-btn" style="padding: 12px 28px; font-size: 16px;">Заказать онлайн</a>
+    </section>
+
+    <!-- Material Details Section -->
+    <section class="material-section" id="material">
+        <h2 class="section-title">Что такое EVA материал?</h2>
+        <div class="material-grid">
+            <div class="material-card">
+                <h3>Ячеистая структура</h3>
+                <p>Благодаря ячейкам глубиной до 8 мм грязь и вода запираются внутри и не переливаются по салону во время движения.</p>
+            </div>
+            <div class="material-card">
+                <h3>Устойчивость к температурам</h3>
+                <p>Материал сохраняет эластичность от -50°C до +50°C. Не твердеет зимой и не имеет запаха летом.</p>
+            </div>
+            <div class="material-card">
+                <h3>Простота в уходе</h3>
+                <p>Коврики не впитывают влагу. Чтобы вымыть их, достаточно перевернуть и выхлопать или промыть струей воды.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery / 4 Works (2x2 Grid, Clean look without captions) -->
+    <section class="gallery-section" id="works">
+        <h2 class="section-title">Примеры наших работ</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="work1.jpg" alt="Пример работы 1">
+            </div>
+            <div class="gallery-item">
+                <img src="work2.jpg" alt="Пример работы 2">
+            </div>
+            <div class="gallery-item">
+                <img src="work4.jpg" alt="Пример работы 3">
+            </div>
+            <div class="gallery-item">
+                <img src="work5.jpg" alt="Пример работы 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead / Order Form Section -->
+    <section class="order-section" id="order">
+        <h2 class="section-title">Рассчитать стоимость для авто</h2>
+        <div class="form-box">
+            <form id="adsLeadForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Марка и модель авто:</label>
+                    <input type="text" name="car" placeholder="Например: BMW X5 / Audi A6 C7" required>
+                </div>
+                <div class="form-group">
+                    <label>Выбор комплекта:</label>
+                    <select name="type">
+                        <option>Коврики в салон (4 шт.)</option>
+                        <option>Салон + Коврик в багажник</option>
+                        <option>Только передний ряд</option>
+                        <option>Сумка-органайзер в багажник</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ваш телефон / Telegram / WhatsApp:</label>
+                    <input type="tel" name="phone" placeholder="+48 XXX XXX XXX" required>
+                </div>
+                <button type="submit" class="submit-btn">Получить расчёт цены</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <a href="#" class="logo">EVA <span>CRAFT</span></a>
+                <p style="color: var(--text-muted); font-size: 13px; margin-top: 10px;">
+                    Производство автомобильных ковриков premium-качества в Лодзи (Польша).
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#material">Материал EVA</a></li>
+                    <li><a href="#works">Наши работы</a></li>
+                    <li><a href="#order">Расчет стоимости</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul>
+                    <li><a href="tel:+48600757108">Тел: +48 600 757 108</a></li>
+                    <li><a href="https://www.tiktok.com/@eva_craft_kd14" target="_blank">TikTok: @eva_craft_kd14</a></li>
+                    <li><a href="https://www.instagram.com/eva_craft_kd14" target="_blank">Instagram: @eva_craft_kd14</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 EVA Craft (Łódź, Polska). Все права защищены. Копирование материалов запрещено.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Спасибо за заявку! Мы свяжемся с вами в течение 15 минут.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
